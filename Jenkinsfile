@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage("Checkout Code") {
             steps {
-                git branch: 'main', url: "${params['github-url']}", credentialsId: "alban-github-credential"
+                git branch: 'main', url: "${params['github-url']}", credentialsId: "alban-github-token"
             }
         }
         stage("Code Scan") {
