@@ -5,6 +5,7 @@ pipeline {
         string(name: 'github-url', defaultValue: '', description: 'Enter your GitHub URL')
         string(name: 'image-name', defaultValue: 'dockerhubusername/repo-name', description: 'Enter your image name')
         string(name: 'image-tag', defaultValue: '', description: 'Enter your image tag')
+        booleanParam(name: 'skip', defaultValue: false, description: "Mark for yes or leave empty for false")
     }
 
     environment {
@@ -35,6 +36,9 @@ pipeline {
             }
         }
         stage("Build Dockerfile") {
+            when {
+                expression { !params.skip } // Only execute if 'skip' is false
+            }
             steps {
                 script {
                     sh "docker build -t ${params['image-name']}:${params['image-tag']} ."
@@ -42,6 +46,9 @@ pipeline {
             }
         }
         stage("Connect to DockerHub") {
+            when {
+                expression { !params.skip } // Only execute if 'skip' is false
+            }
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: "alban_dockerhub-credential", passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
@@ -51,6 +58,9 @@ pipeline {
             }
         }
         stage("Push to DockerHub") {
+            when {
+                expression { !params.skip } // Only execute if 'skip' is false
+            }
             steps {
                 script {
                     sh "docker push ${params['image-name']}:${params['image-tag']}"
