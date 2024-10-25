@@ -35,7 +35,6 @@ pipeline {
             }
         }
         stage("Build Dockerfile") {
-           
             steps {
                 script {
                     sh "docker build -t ${params['image-name']}:${params['image-tag']} ."
@@ -43,8 +42,6 @@ pipeline {
             }
         }
         stage("Connect to DockerHub") {
-            
-            }
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: "alban_dockerhub-credential", passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
@@ -54,7 +51,6 @@ pipeline {
             }
         }
         stage("Push to DockerHub") {
-            
             steps {
                 script {
                     sh "docker push ${params['image-name']}:${params['image-tag']}"
