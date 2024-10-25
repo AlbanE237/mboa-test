@@ -4,6 +4,7 @@ pipeline {
         string(name: 'github-url', defaultValue: '', description: 'Enter your GitHub URL')
         string(name: 'image-name', defaultValue: 'dockerhubusername/repo-name', description: 'Enter your image name')
         string(name: 'image-tag', defaultValue: '', description: 'Enter your image tag')
+        booleanParam(name: 'skip', defaultValue: false, description: "Mark for yes or leave empty for false")
     }
 
     stages {
