@@ -27,7 +27,7 @@ pipeline {
                             -Dsonar.login=$SONAR_TOKEN \
                             -Dsonar.host.url=http://18.219.90.216:9000/ \
                             -Dsonar.projectKey=alban \
-                            -Dsonar.sources=./mboa-test
+                            -Dsonar.sources=./inance
                             '''
                         }
                     }
