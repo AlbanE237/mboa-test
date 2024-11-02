@@ -25,7 +25,7 @@ pipeline {
         }
         stage("Code scan") {
             when {
-                expression { !params.skip }
+                expression { !params.skip }  // Pour exécuter quand ca ne sera coche
             }
             steps {
                 script {
@@ -45,7 +45,7 @@ pipeline {
         }
         stage("Build Dockerfile") {
             when {
-                expression { !params.skip }
+                expression { !params.skip }  // Pour exécuter quand ca ne sera coche
             }
             steps {
                 script {
@@ -55,7 +55,7 @@ pipeline {
         }
         stage("Connect to DockerHub") {
             when {
-                expression { !params.skip }
+                expression { !params.skip }  // Pour exécuter quand ca ne sera coche
             }
             steps {
                 script {
@@ -68,7 +68,7 @@ pipeline {
         }
         stage("Push to DockerHub") {
             when {
-                expression { !params.skip }
+                expression { !params.skip }  // Pour exécuter quand ca ne sera coche
             }
             steps {
                 script {
@@ -78,7 +78,7 @@ pipeline {
         }
         stage("Connect to remote and deploy") {
             when {
-                expression { !params.skip_deployment }
+                expression { !params.skip_deployment } // Pour exécuter quand ca ne sera coche
             }
             steps {
                 script {
@@ -88,7 +88,7 @@ pipeline {
         }
         stage("Clean deployment server") {
             when {
-                expression { !params.clean_deployment } 
+                expression { params.clean_deployment } // Pour exécuter quand ca sera coche 
             }
             steps {
                 script {
