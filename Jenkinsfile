@@ -34,7 +34,7 @@ pipeline {
                             sh '''
                             $scanner/bin/sonar-scanner \
                             -Dsonar.login=$SONAR_TOKEN \
-                            -Dsonar.host.url=http://18.216.0.51:9000/ \
+                            -Dsonar.host.url=http://3.17.190.122:9000/ \
                             -Dsonar.projectKey=alban \
                             -Dsonar.sources=./inance
                             '''
