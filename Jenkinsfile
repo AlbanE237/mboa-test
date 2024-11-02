@@ -25,7 +25,7 @@ pipeline {
         }
         stage("Code scan") {
             when {
-                expression { !params.skip }  // Pour exécuter quand ca ne sera coche
+                expression { !params.skip }  // Coche la case "skip" pour sauter ce stage
             }
             steps {
                 script {
@@ -45,7 +45,7 @@ pipeline {
         }
         stage("Build Dockerfile") {
             when {
-                expression { !params.skip }  // Pour exécuter quand ca ne sera coche
+                expression { !params.skip }  // Coche la case "skip" pour sauter ce stage
             }
             steps {
                 script {
@@ -55,7 +55,7 @@ pipeline {
         }
         stage("Connect to DockerHub") {
             when {
-                expression { !params.skip }  // Pour exécuter quand ca ne sera coche
+                expression { !params.skip }  // Coche la case "skip" pour sauter ce stage
             }
             steps {
                 script {
@@ -68,7 +68,7 @@ pipeline {
         }
         stage("Push to DockerHub") {
             when {
-                expression { !params.skip }  // Pour exécuter quand ca ne sera coche
+                expression { !params.skip } // Coche la case "skip" pour sauter ce stage
             }
             steps {
                 script {
@@ -78,7 +78,7 @@ pipeline {
         }
         stage("Connect to remote and deploy") {
             when {
-                expression { !params.skip_deployment } // Pour exécuter quand ca ne sera coche
+                expression { !params.skip_deployment }  // Coche la case "skip_deployment" pour sauter ce stage
             }
             steps {
                 script {
@@ -88,11 +88,11 @@ pipeline {
         }
         stage("Clean deployment server") {
             when {
-                expression { params.clean_deployment } // Pour exécuter quand ca sera coche 
+                expression { params.clean_deployment }  // Coche la case "clean_deployment" pour valider ce stage
             }
             steps {
                 script {
-                    sh "sshpass -p '${params['password']}' ssh -o StrictHostKeyChecking=no ${params['remote_user']}@${params['server_dns']} 'docker stop (docker ps -q) && docker rm (docker ps -aq)'"
+                    sh "sshpass -p '${params['password']}' ssh -o StrictHostKeyChecking=no ${params['remote_user']}@${params['server_dns']} 'sh -c \"docker stop \$(docker ps -aq) && docker rm \$(docker ps -aq) && docker rmi -f \$(docker images -q)\"'"
                 }
             }
         }
