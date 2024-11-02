@@ -8,9 +8,9 @@ pipeline {
         string(name: 'password', defaultValue: '', description: 'Enter your password for remote server')
         string(name: 'remote_user', defaultValue: '', description: 'Enter your remote user')
         string(name: 'server_dns', defaultValue: '', description: 'Enter your server DNS')
-        booleanParam(name: 'skip', defaultValue: false, description: "Skip Code scan, build to Push")
-        booleanParam(name: 'skip_deployment', defaultValue: false, description: 'Skip Deployment')
-        booleanParam(name: 'clean_deployment', defaultValue: false, description: 'Clean Deployment')
+        booleanParam(name: 'skip', defaultValue: false, description: "pour Skip Code scan, build to Push")
+        booleanParam(name: 'skip_deployment', defaultValue: false, description: ' Pour Skip Deployment')
+        booleanParam(name: 'clean_deployment', defaultValue: false, description: 'Pour Clean serveur du deploiement')
     }
 
     environment {
