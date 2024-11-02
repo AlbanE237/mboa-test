@@ -26,7 +26,7 @@ pipeline {
                             sh '''
                             $scanner/bin/sonar-scanner \
                             -Dsonar.login=$SONAR_TOKEN \
-                            -Dsonar.host.url=http://18.219.90.216:9000/ \
+                            -Dsonar.host.url=http://http://18.216.0.51:9000// \
                             -Dsonar.projectKey=alban \
                             -Dsonar.sources=./inance
                             '''
@@ -64,6 +64,15 @@ pipeline {
             steps {
                 script {
                     sh "docker push ${params['image-name']}:${params['image-tag']}"
+                }
+            }
+        }
+        stage("Remove All Docker Images") {
+            steps {
+                script {
+                    sh '''
+                    docker rmi $(docker images -q) || true
+                    '''
                 }
             }
         }
