@@ -25,7 +25,7 @@ pipeline {
         }
         stage("Code scan") {
             when {
-                expression { !params.skip }  // Coche la case "skip" pour sauter ce stage
+                expression { !params.skip }
             }
             steps {
                 script {
@@ -45,7 +45,7 @@ pipeline {
         }
         stage("Build Dockerfile") {
             when {
-                expression { !params.skip }  // Coche la case "skip" pour sauter ce stage
+                expression { !params.skip }
             }
             steps {
                 script {
@@ -55,7 +55,7 @@ pipeline {
         }
         stage("Connect to DockerHub") {
             when {
-                expression { !params.skip }  // Coche la case "skip" pour sauter ce stage
+                expression { !params.skip }
             }
             steps {
                 script {
@@ -68,7 +68,7 @@ pipeline {
         }
         stage("Push to DockerHub") {
             when {
-                expression { !params.skip } // Coche la case "skip" pour sauter ce stage
+                expression { !params.skip }
             }
             steps {
                 script {
@@ -78,7 +78,7 @@ pipeline {
         }
         stage("Connect to remote and deploy") {
             when {
-                expression { !params.skip_deployment }  // Coche la case "skip_deployment" pour sauter ce stage
+                expression { !params.skip_deployment }
             }
             steps {
                 script {
@@ -88,17 +88,15 @@ pipeline {
         }
         stage("Clean deployment server") {
             when {
-                expression { params.clean_deployment }  // Coche la case "clean_deployment" pour valider ce stage
+                expression { params.clean_deployment }
             }
             steps {
                 script {
                     sh """
                     sshpass -p '${params['password']}' ssh -o StrictHostKeyChecking=no ${params['remote_user']}@${params['server_dns']} '
-                        # Arrêter et supprimer tous les conteneurs
                         if [ \$(docker ps -q) ]; then
                             docker stop \$(docker ps -q) && docker rm \$(docker ps -q)
                         fi
-                        # Supprimer toutes les images, s'il y en a
                         if [ \$(docker images -q) ]; then
                             docker rmi -f \$(docker images -q)
                         fi
