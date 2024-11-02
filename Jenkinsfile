@@ -8,9 +8,9 @@ pipeline {
         string(name: 'password', defaultValue: '', description: 'Enter your password for remote server')
         string(name: 'remote_user', defaultValue: '', description: 'Enter your remote user')
         string(name: 'server_dns', defaultValue: '', description: 'Enter your server DNS')
-        booleanParam(name: 'skip', defaultValue: false, description: "Mark for yes or leave empty for false")
-        booleanParam(name: 'skip_deployment', defaultValue: false, description: 'Skip deployment')
-        booleanParam(name: 'clean_deployment', defaultValue: false, description: 'Clean deployment')
+        booleanParam(name: 'skip', defaultValue: false, description: "Skip Code scan, build to Push")
+        booleanParam(name: 'skip_deployment', defaultValue: false, description: 'Skip Deployment')
+        booleanParam(name: 'clean_deployment', defaultValue: false, description: 'Clean Deployment')
     }
 
     environment {
@@ -88,7 +88,7 @@ pipeline {
         }
         stage("Clean deployment server") {
             when {
-                expression { params.clean_deployment } // Corrected condition to run when clean_deployment is true
+                expression { !params.clean_deployment } 
             }
             steps {
                 script {
