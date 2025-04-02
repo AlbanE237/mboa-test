@@ -1,38 +1,38 @@
-🚀 Mboa-Test: CI/CD Pipeline Automatisé avec Jenkins et Docker
+🚀 Mboa-Test: Automated CI/CD Pipeline with Jenkins and Docker
 📌 Description
-Ce projet met en place un pipeline CI/CD avec Jenkins, qui permet de :
-✅ Cloner un dépôt GitHub et récupérer le code source
-✅ Effectuer une analyse de code avec SonarQube (qualité du code)
-✅ Construire et pousser une image Docker sur DockerHub
-✅ Déployer l'application sur un serveur distant via SSH
-✅ Nettoyer automatiquement le serveur après utilisation pour optimiser les coûts
+This project sets up a CI/CD pipeline using Jenkins, which allows:
+✅ Cloning a GitHub repository and retrieving the source code
+✅ Performing code analysis with SonarQube (code quality)
+✅ Building and pushing a Docker image to DockerHub
+✅ Deploying the application to a remote server via SSH
+✅ Automatically cleaning up the server after deployment to optimize costs
 
-🛠️ Technologies utilisées
-🔹 Jenkins 🛠️ - Automatisation des pipelines CI/CD
-🔹 Docker 🐳 - Conteneurisation de l’application
-🔹 SonarQube 🔍 - Analyse statique du code
-🔹 SSH & DockerHub 🌐 - Déploiement et gestion des conteneurs à distance
+🛠️ Technologies Used
+🔹 Jenkins 🛠️ - CI/CD pipeline automation
+🔹 Docker 🐳 - Application containerization
+🔹 SonarQube 🔍 - Static code analysis
+🔹 SSH & DockerHub 🌐 - Remote deployment and container management
 
-🚀 Comment l’utiliser ?
-1️⃣ Cloner le repo
+🚀 How to Use?
+1️⃣ Clone the Repository
 bash
 Copy
 Edit
 git clone https://github.com/AlbanE237/mboa-test.git
 cd mboa-test
-2️⃣ Configurer Jenkins
-Ajouter les credentials nécessaires (GitHub, DockerHub, SSH).
+2️⃣ Set Up Jenkins
+Add the required credentials (GitHub, DockerHub, SSH)
 
-Configurer un nouveau pipeline en important le Jenkinsfile.
+Configure a new pipeline by importing the Jenkinsfile
 
-3️⃣ Exécuter le pipeline
-Déclencher le build via Jenkins.
+3️⃣ Run the Pipeline
+Trigger the build via Jenkins
 
-Vérifier l’analyse de code et la construction du conteneur Docker.
+Verify the code analysis and Docker container build
 
-Le pipeline déploiera automatiquement l’application et nettoiera le serveur.
+The pipeline will automatically deploy the application and clean up the server
 
-📂 Structure du projet
+📂 Project Structure
 scss
 Copy
 Edit
@@ -42,23 +42,23 @@ Edit
  ┣ 📂 jenkins
  ┃ ┗ 📜 Jenkinsfile
  ┣ 📂 scripts
- ┃ ┗ 📜 deploy.sh  (à venir)
+ ┃ ┗ 📜 deploy.sh  (coming soon)
  ┣ 📂 docs
  ┃ ┗ 📜 README.md
  ┗ 📜 .gitignore
-🤝 Contribution
-🚀 Toute contribution est la bienvenue !
+🤝 Contributing
+🚀 Contributions are welcome!
 
-Fork le projet 🍴
+Fork the project 🍴
 
-Crée une branche feature-xxx 🌱
+Create a new branch feature-xxx 🌱
 
-Apporte tes modifications et fais un commit 💡
+Make your changes and commit 💡
 
-Ouvre une PR (Pull Request) 🚀
+Open a PR (Pull Request) 🚀
 
 📞 Contact
 👤 Alban
 📧 LinkedIn
 
-⭐ Si ce projet t’a aidé, n’hésite pas à laisser un ⭐ sur le repo !
+⭐ If this project helps you, don't forget to leave a ⭐ on the repo!
