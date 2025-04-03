@@ -21,16 +21,16 @@ jobs:
 
       - name: Lint Dockerfile
         run: |
-          docker run --rm -i hadolint/hadolint < Dockerfile
+          docker run --rm -i hadolint/hadolint < docker/Dockerfile  # path Correction
 
       - name: Validate Jenkinsfile syntax
         run: |
           curl --silent --fail --show-error -X POST \
-          --data-urlencode "jenkinsfile=$(cat Jenkinsfile)" \
+          --data-urlencode "jenkinsfile=$(cat jenkins/Jenkinsfile)" \  # path Correction
           https://ci.jenkins.io/job/linter/job/jenkinsfile-linter/ \
           || exit 1
 
       - name: Run a basic container test
         run: |
-          docker build -t mboa-test .
+          docker build -t mboa-test -f docker/Dockerfile .  # good path
           docker run --rm mboa-test --version || exit 1
