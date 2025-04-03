@@ -2,6 +2,7 @@
 
 📌 Description
 
+⚡ This project is actively being improved! Contributions and feedback are welcome to enhance functionality and documentation.
 
 This project sets up a CI/CD pipeline using Jenkins, which allows:
 
@@ -25,6 +26,16 @@ This project sets up a CI/CD pipeline using Jenkins, which allows:
 🔹 SonarQube 🔍 - Static code analysis
 
 🔹 SSH & DockerHub 🌐 - Remote deployment and container management
+
+ Prerequisites
+
+Before you begin, make sure you have installed:
+
+Docker 🐳 → [Installation](https://docs.docker.com/get-docker/)
+
+Jenkins 🛠️ → [Installation](https://www.jenkins.io/doc/book/installing/)
+
+SonarQube 🔍 (optional, for code analysis)  
 
 
 🚀 How to Use?
