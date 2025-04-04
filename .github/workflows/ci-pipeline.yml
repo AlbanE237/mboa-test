@@ -23,13 +23,6 @@ jobs:
         run: |
           docker run --rm -i hadolint/hadolint < Dockerfile || true
 
-      - name: Validate Jenkinsfile syntax
-        run: |
-          curl --silent --fail --show-error -X POST \
-          --data-urlencode "jenkinsfile=$(cat Jenkinsfile)" \
-          https://ci.jenkins.io/job/linter/job/jenkinsfile-linter/ \
-          || true
-
       - name: Run a basic container test
         run: |
           docker build -t mboa-test -f Dockerfile .
