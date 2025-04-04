@@ -64,19 +64,28 @@ The pipeline will automatically deploy the application and clean up the server i
 
 📦 mboa-test
 
- ┣ 📂 docker
- ┃ ┗ 📜 Dockerfile
- 
- ┣ 📂 jenkins
- ┃ ┗ 📜 Jenkinsfile
- 
- ┣ 📂 scripts
- ┃ ┗ 📜 deploy.sh  (coming soon)
- 
- ┣ 📂 docs
- ┃ ┗ 📜 README.md
- 
- ┗ 📜 .gitignore
+┣ 📂 .github
+┃ ┗ 📂 workflows
+┃   ┗ 📜 ci-pipeline.yml            # GitHub Actions workflow
+
+┣ 📂 inance                         # Static web files for the container
+
+┣ 📜 Dockerfile                     # Docker build instructions
+
+┣ 📜 Jenkinsfile                    # Jenkins pipeline configuration
+
+┣ 📜 README.md                      # Project documentation
+
+┣ 📜 .gitignore                     # Ignored files and folders
+
+┣ 📜 CONTRIBUTING.md               # Guidelines for contributing
+
+┣ 📜 CODE_OF_CONDUCT.md            # Contributor code of conduct
+
+┣ 📜 SECURITY.md                   # Security policy
+
+┗ 📜 LICENSE                        # MIT License
+
 
 
 🤝 Contributing
