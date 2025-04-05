@@ -1,7 +1,7 @@
 FROM httpd
 
 #updating the system
-RUN apt update -y 
+RUN apt-get update -y 
 
 #variables
 ARG port=80
