@@ -21,21 +21,22 @@ jobs:
 
       - name: Lint Dockerfile
         run: |
-          docker run --rm -i hadolint/hadolint < Dockerfile || true
+           #  Docker Syntax Verification
+           docker run --rm -i hadolint/hadolint < Dockerfile || true
 
       - name: Run a basic container test
         run: |
            docker build -t mboa-test -f Dockerfile .
            docker run --rm mboa-test httpd -v
-           # Démarrer le conteneur en arrière-plan
+           #  Container Launch in Background
            docker run -d --name mboa-container -p 8080:80 mboa-test
 
-           # Attendre quelques secondes que Apache démarre
+           # Wait few seconds for Apache Launch
            sleep 5
 
-           # Tester si Apache répond sur le port 8080
-           curl -f http://localhost:8080
+           # Test if apache respond port 8080(Only header)
+           curl -I http://localhost:8080
 
-           # Nettoyer (arrêter et supprimer le conteneur)
+           # Cleaning (Stop and Delete Conatainer)
            docker stop mboa-container
            docker rm mboa-container
