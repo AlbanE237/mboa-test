@@ -26,4 +26,4 @@ jobs:
       - name: Run a basic container test
         run: |
            docker build -t mboa-test -f Dockerfile .
-           docker run --rm mboa-test --version || true
+           docker run --rm mboa-test httpd -v
