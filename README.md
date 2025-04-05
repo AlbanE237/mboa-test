@@ -104,7 +104,7 @@ Open a PR (Pull Request) 🚀
 
 👤 Alban Eboua
 
-📧 [LinkedIn](https://www.linkedin.com/in/albaneboua/)
+📧 [LinkedIn]([https://www.linkedin.com/in/albaneboua/](https://www.linkedin.com/in/alban-eboua-9b4510140/?locale=en_US))
 
 ⭐ If this project helps you, don't forget to leave a ⭐ on the repo!
 
