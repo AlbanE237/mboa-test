@@ -35,7 +35,7 @@ jobs:
            sleep 5
 
            # Test if apache respond port 8080(Only header)
-           if curl -I http://localhost:8080
+           if curl -I http://localhost:8080; then
              echo "✅ Apache server is UP and reachable."
 
              # Create a green success summary
