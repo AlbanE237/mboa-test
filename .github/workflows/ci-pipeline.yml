@@ -24,7 +24,7 @@ jobs:
            #  Docker Syntax Verification
            docker run --rm -i hadolint/hadolint < Dockerfile || true
 
-      - name: Run a basic container test
+      - name: Run a full container health check
         run: |
            docker build -t mboa-test -f Dockerfile .
            docker run --rm mboa-test httpd -v
