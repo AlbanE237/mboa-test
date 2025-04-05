@@ -1,4 +1,4 @@
-🚀 Mboa-Test: Automated Apache Server Deployment CI/CD Pipeline with Jenkins and Docker
+ Mboa-Test: Automated Apache Server Deployment CI/CD Pipeline with Jenkins and Docker
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
@@ -42,7 +42,7 @@ Jenkins 🛠️ → [Installation](https://www.jenkins.io/doc/book/installing/)
 SonarQube 🔍 (optional, for code analysis)  
 
 
-🚀 How to Use?
+ How to Use?
 
 1️⃣ Clone the Repository
 
