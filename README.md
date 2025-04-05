@@ -63,13 +63,12 @@ SonarQube 🔍 (optional, for code analysis)
 
 ⚙️ Server Update Before Deployment
 
-Before deploying Apache, the remote server (a VM on Google Cloud Platform) is automatically updated using `apt update`.
+Before the Docker deployment, the remote server (GCP, AZURE, AWS Virtual Machine) is automatically updated using `apt update`.
 
-Keeping the server updated ensures:
-
-- Better security by applying the latest patches.
-- Improved stability by using the most recent versions of system packages.
-- Prevention of potential issues during Docker deployment.
+This step ensures:
+- Security patches are applied
+- Packages are up to date
+- Smoother Docker installation and execution
 
 This good practice strengthens the reliability and security of the deployed application.
 
