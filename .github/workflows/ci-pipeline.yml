@@ -27,3 +27,15 @@ jobs:
         run: |
            docker build -t mboa-test -f Dockerfile .
            docker run --rm mboa-test httpd -v
+           # Démarrer le conteneur en arrière-plan
+           docker run -d --name mboa-container -p 8080:80 mboa-test
+
+           # Attendre quelques secondes que Apache démarre
+           sleep 5
+
+           # Tester si Apache répond sur le port 8080
+           curl -f http://localhost:8080
+
+           # Nettoyer (arrêter et supprimer le conteneur)
+           docker stop mboa-container
+           docker rm mboa-container
