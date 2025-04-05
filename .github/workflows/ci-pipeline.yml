@@ -37,6 +37,9 @@ jobs:
            # Test if apache respond port 8080(Only header)
            curl -I http://localhost:8080
 
+           # IF TEST SUCCEFULL 
+           echo "✅ TEST REUSSI : Le serveur Apache répond correctement ! 🎉"
+
            # Cleaning (Stop and Delete Conatainer)
            docker stop mboa-container
            docker rm mboa-container
