@@ -6,7 +6,7 @@
 
 📌 Description
 
-⚡ This project is actively being improved! Contributions and feedback are welcome to enhance functionality and documentation.
+⚡ This project automates the deployment of an Apache server using Jenkins, Docker, and GitHub Actions for Docker validation .
 
 This project sets up a CI/CD pipeline using Jenkins, which allows:
 
