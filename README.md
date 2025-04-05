@@ -92,23 +92,16 @@ The pipeline will automatically deploy the application and clean up the server i
 
 
 
-🤝 Contributing
+📈 Status
+---------
 
-🚀 Contributions are welcome!
+✅ The project is complete and the deployment is fully automated.
 
-Fork the project 🍴
 
-Create a new branch feature-xxx 🌱
+## 🔗 Connect with me
 
-Make your changes and commit 💡
-
-Open a PR (Pull Request) 🚀
-
-📞 Contact
-
-👤 Alban Eboua
-
-📧 [LinkedIn]([https://www.linkedin.com/in/albaneboua/](https://www.linkedin.com/in/alban-eboua-9b4510140/?locale=en_US))
+- [LinkedIn](https://www.linkedin.com/in/alban-eboua-9b4510140/?locale=en_US)
+- [GitHub](https://github.com/AlbanE237)
 
 ⭐ If this project helps you, don't forget to leave a ⭐ on the repo!
 
