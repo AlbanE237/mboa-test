@@ -35,11 +35,23 @@ jobs:
            sleep 5
 
            # Test if apache respond port 8080(Only header)
-           curl -I http://localhost:8080
+           if curl -I http://localhost:8080
+             echo "✅ Apache server is UP and reachable."
 
-           # IF TEST SUCCEFULL 
-           echo "✅ TEST REUSSI : Le serveur Apache répond correctement ! 🎉"
+             # Create a green success summary
+             echo "### ✅ Container Test Passed 🎉" >> $GITHUB_STEP_SUMMARY
+             echo "The Apache server successfully responded on port 8080." >> $GITHUB_STEP_SUMMARY
+           else
+             echo "❌ Apache server is NOT reachable."
 
-           # Cleaning (Stop and Delete Conatainer)
+             # Create a red failure summary
+             echo "### ❌ Container Test Failed 💥" >> $GITHUB_STEP_SUMMARY
+             echo "Failed to reach the Apache server on port 8080." >> $GITHUB_STEP_SUMMARY
+
+             # Force the job to fail
+             exit 1
+           fi
+
+           # Cleanup (Stop and Delete Container)
            docker stop mboa-container
            docker rm mboa-container
