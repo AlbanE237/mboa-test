@@ -23,7 +23,7 @@ This project sets up a CI/CD pipeline using Jenkins, which allows:
 🛠️ Technologies Used
 
 
-🔹 Jenkins 🛠️ - CI/CD pipeline automation
+🔹 Jenkins & Github action 🛠️ - CI/CD pipeline automation
 
 🔹 Docker 🐳 - Application containerization
 
@@ -46,23 +46,33 @@ SonarQube 🔍 (optional, for code analysis)
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/AlbanE237/mboa-test.git
+ - git clone https://github.com/AlbanE237/mboa-test.git
 
-cd mboa-test
+ - cd mboa-test
 
 2️⃣ Set Up Jenkins
 
-Add the required credentials (GitHub, DockerHub, SSH)
-
-Configure a new pipeline by importing the Jenkinsfile
+- Add the required credentials (GitHub, DockerHub, SSH)
+- Configure a new pipeline by importing the Jenkinsfile
 
 3️⃣ Run the Pipeline
 
-Trigger the build via Jenkins
+- Trigger the build via Jenkins
+- Verify the code analysis and Docker container build
+- The pipeline will automatically deploy the application and clean up the server if stage check box On
 
-Verify the code analysis and Docker container build
+⚙️ Server Update Before Deployment
 
-The pipeline will automatically deploy the application and clean up the server if stage check box On
+Before deploying Apache, the remote server (a VM on Google Cloud Platform) is automatically updated using `apt update`.
+
+Keeping the server updated ensures:
+
+- Better security by applying the latest patches.
+- Improved stability by using the most recent versions of system packages.
+- Prevention of potential issues during Docker deployment.
+
+This good practice strengthens the reliability and security of the deployed application.
+
 
 📂 Project Structure
 
